@@ -6,6 +6,13 @@ public class Methods {
         System.out.println(y);
         int z = method2("Lucas", 16);
         System.out.println(z);
+        double d1 = method3(4, 2.5);
+        System.out.println(d1);
+    }
+
+    public static double method3(int y, double z) {
+        double result = z*y+7;
+        return result;
     }
 
     public static int method2(String name, int x) {
