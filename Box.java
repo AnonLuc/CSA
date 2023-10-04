@@ -39,6 +39,11 @@ public class Box {
         double v = length*width*height;
         return v;
     }
+    public String toString() {
+        String s = "A box with dimenstions " + length + " " + width + " " + height + " ";
+        s+= "\nColor is " + color + " has a lid? " + hasLid;
+        return s;
+    }
     public static void main(String[] args) {
        Box b1 = new Box(5.6, 2.5 , 3.7, "purple", true);
 
@@ -54,6 +59,7 @@ public class Box {
        System.out.println(h2);
 
        System.out.println("The volume of b1 is " + b1.getVolume());
+       System.out.println(b1);
     
     }
 }
