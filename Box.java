@@ -19,9 +19,18 @@ public class Box {
         color = "white";
         hasLid = false;
     }
+    public Box() {
+        length = 1.0;
+        width = 1.0;
+        height = 1.0;
+        color = "white";
+        hasLid = true;
+    }
     public static void main(String[] args) {
        Box b1 = new Box(5.6, 2.5 , 3.7, "purple", true);
 
        Box b2 = new Box(3.4, 1.2, 2.3);
+
+       Box b3 = new Box();
     }
 }
