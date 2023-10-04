@@ -35,7 +35,10 @@ public class Box {
             height = h;
         }
     }
-    
+    public double getVolume() {
+        double v = length*width*height;
+        return v;
+    }
     public static void main(String[] args) {
        Box b1 = new Box(5.6, 2.5 , 3.7, "purple", true);
 
@@ -49,6 +52,8 @@ public class Box {
        System.out.println(h1);
        double h2 = b2.getHeight();
        System.out.println(h2);
+
+       System.out.println("The volume of b1 is " + b1.getVolume());
     
     }
 }
