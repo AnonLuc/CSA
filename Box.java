@@ -44,6 +44,12 @@ public class Box {
         s+= "\nColor is " + color + " has a lid? " + hasLid;
         return s;
     }
+    public boolean isTaller(Box other) {
+        double h = other.getHeight();
+        if (height > h) return true;
+        else return false;
+        }
+    
     public static void main(String[] args) {
        Box b1 = new Box(5.6, 2.5 , 3.7, "purple", true);
 
@@ -51,6 +57,10 @@ public class Box {
 
        Box b3 = new Box();
        b3.setHeight(4.5);
+
+       System.out.println("is b1 taller than b3?");
+       System.out.println(b1.isTaller(b3));
+
        double h3 = b3.getHeight();
        System.out.println(h3);
        double h1 = b1.getHeight();
