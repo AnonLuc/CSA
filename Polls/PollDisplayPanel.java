@@ -63,9 +63,39 @@ public class PollDisplayPanel extends JPanel
   // Draws the pie chart.
   // To avoid gaps in the picture, the following algorithm is used:
   // 1. set fromDegree to 0;
+  public int fromDegree(){
+    return 0;
+  }
   // 2. draw the red sector and increment fromDegree by its size
+  public int drawRedSector(Graphics g, int x, int y, int r, int fromDegree){
+    int total = count1 + count2 + count3;
+    int degrees;
+    g.setColor(Color.RED);
+    degrees = countToDegrees(count1, total);
+    drawSector(g, x, y, r, fromDegree, degrees);
+    fromDegree += degrees;
+    return fromDegree;
+  }
   // 3. draw the green sector and increment fromDegree by its size
+  public int drawGreenSector(Graphics g, int x, int y, int r, int fromDegree){
+    int total = count1 + count2 + count3;
+    int degrees;
+    g.setColor(Color.GREEN);
+    degrees = countToDegrees(count2, total);
+    drawSector(g, x, y, r, fromDegree, degrees);
+    fromDegree += degrees;
+    return fromDegree;
+  }
   // 4. set the size of the blue sector to the remaining
+  public int drawBlueSector(Graphics g, int x, int y, int r, int fromDegree){
+    int total = count1 + count2 + count3;
+    int degrees;
+    g.setColor(Color.BLUE);
+    degrees = countToDegrees(count3, total);
+    drawSector(g, x, y, r, fromDegree, degrees);
+    fromDegree += degrees;
+    return fromDegree;
+  }
   //    area, 360 - fromDegree, but not less than 0:
   //      degrees = Math.max(360 - fromDegree, 0);
   //    (Occasionally, due to rounding errors, fromDegree may become 361,
@@ -81,10 +111,9 @@ public class PollDisplayPanel extends JPanel
       g.setColor(Color.RED);
       degrees = countToDegrees(count1, total);
       drawSector(g, x, y, r, fromDegree, degrees);
-
-      //_________________________________________________
-
-      //...
+      drawRedSector(g, x, y, degrees, fromDegree);
+      drawGreenSector(g, x, y, degrees, fromDegree);
+      drawBlueSector(g, x, y, degrees, fromDegree);
     }
     else
     {
