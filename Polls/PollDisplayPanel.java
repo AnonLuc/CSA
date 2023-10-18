@@ -58,7 +58,6 @@ public class PollDisplayPanel extends JPanel
     int r = Math.min(w, h) / 4;
     drawPieChart(g, x, y, r);
     drawLegend(g, x, y, r);
-    drawSector(g, x, y, r, r, r);
   }
 
   // Draws the pie chart.
@@ -85,19 +84,20 @@ public class PollDisplayPanel extends JPanel
       g.setColor(Color.RED);
       degrees = countToDegrees(count1, total);
       System.out.println(degrees);
-      // Draw Red Sector
-      g.setColor(Color.RED);
       drawSector(g, x, y, r, fromDegree, degrees);
+      // Draw Red Sector
       fromDegree += degrees;
       // Draw Green Sector
       degrees = countToDegrees(count2, total);
       g.setColor(Color.GREEN);
       drawSector(g, x, y, r, fromDegree, degrees);
+      System.out.println(degrees);
       fromDegree += degrees;
       // Draw Blue Sector
       degrees = Math.max(360 - fromDegree, 0);
       g.setColor(Color.BLUE);
       drawSector(g, x, y, r, fromDegree, degrees);
+      System.out.println(degrees);
     }
     else
     {
@@ -113,11 +113,11 @@ public class PollDisplayPanel extends JPanel
     y += (r + 20);
     g.setColor(Color.BLACK);
 
-    g.drawString("Tami", x - r, y);
+    g.drawString(name1 + count1, x - r, y);
 
-    g.drawString("Brian", x, y);
+    g.drawString(name2 + count2, x, y);
 
-    g.drawString("Liz", x + r, y);
+    g.drawString(name3 + count3, x + r, y);
 
 
     // Display the color squares:
