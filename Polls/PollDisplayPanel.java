@@ -94,9 +94,10 @@ public class PollDisplayPanel extends JPanel
       g.setColor(Color.GREEN);
       drawSector(g, x, y, r, fromDegree, degrees);
       fromDegree += degrees;
-
-
-
+      // Draw Blue Sector
+      degrees = Math.max(360 - fromDegree, 0);
+      g.setColor(Color.BLUE);
+      drawSector(g, x, y, r, fromDegree, degrees);
     }
     else
     {
@@ -112,11 +113,11 @@ public class PollDisplayPanel extends JPanel
     y += (r + 20);
     g.setColor(Color.BLACK);
 
-    g.drawString("Count 1", x - r, y);
+    g.drawString("Tami", x - r, y);
 
-    g.drawString("Count 2", x, y);
+    g.drawString("Brian", x, y);
 
-    g.drawString("Count 3", x + r, y);
+    g.drawString("Liz", x + r, y);
 
 
     // Display the color squares:
