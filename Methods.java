@@ -21,6 +21,7 @@ public class Methods {
         return y;
     }
 
+
     public static void method1(int x) {
         int y = x +1;
         System.out.println("One more than " + y);
