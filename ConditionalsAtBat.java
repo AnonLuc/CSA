@@ -17,6 +17,35 @@ public class ConditionalsAtBat {
         }
         return !(isMorning || isAsleep);
     }
+    public String setAlarm(int day, boolean onVacation){
+        if(onVacation && (day == 0 || day == 6)){
+            return "off";
+        } else if(day == 0 || day == 6 || onVacation) {
+            return "10:00";
+        }
+        return "7:00";
+    }
+    public boolean onesDigitSame(int a, int b, int c){
+        return a % 10 == b % 10 || a % 10 == c % 10 || b % 10 == c % 10;
+    }
+    public int blackjack(int a, int b){
+        if(a <= 21 && b <= 21){
+            if (a < b){
+                return b;
+            }
+            return a;
+        } else if(a > 21 && b > 21){
+            return 0;
+        }
+        else if(a - b > 0){
+            return b;
+        } 
+        else if(b - a > 0){
+            return a;
+        }
+
+        return 0;
+    }
 
 
     public static void main(String[] args) {
@@ -53,7 +82,33 @@ public class ConditionalsAtBat {
         System.out.println("\n");
 
         // Question 4
-        
+        System.out.println("Question 4: \n");
+        System.out.println(condition.setAlarm(1, false));
+        System.out.println(condition.setAlarm(5, false));
+        System.out.println(condition.setAlarm(0, false));
+        System.out.println(condition.setAlarm(2, true));
+        System.out.println(condition.setAlarm(4, true));
+        System.out.println(condition.setAlarm(6, true));
+        System.out.println("\n");
 
+        // Question 5
+        System.out.println("Question 5: \n");
+        System.out.println(condition.onesDigitSame(23, 19, 13));
+        System.out.println(condition.onesDigitSame(23, 19, 12));
+        System.out.println(condition.onesDigitSame(23, 19, 3));
+        System.out.println(condition.onesDigitSame(423, 13, 3));
+        System.out.println(condition.onesDigitSame(23, 29, 25));
+        System.out.println("\n");
+
+        // Question 6
+        System.out.println("Question 6: \n");
+        System.out.println(condition.blackjack(19, 21));
+        System.out.println(condition.blackjack(21, 19));
+        System.out.println(condition.blackjack(19, 22));
+        System.out.println(condition.blackjack(8, 8));
+        System.out.println(condition.blackjack(25, 24));
+        System.out.println(condition.blackjack(17, 9));
+        System.out.println(condition.blackjack(12, 18));
+        System.out.println("\n");
     }
 }
