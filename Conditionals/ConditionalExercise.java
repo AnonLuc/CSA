@@ -52,9 +52,16 @@ public class ConditionalExercise {
             return 0; // if neither file fits
 
     }
+    // Exercise 4
+    public boolean makeBenches(int small, int big, int goal){
+        if (small + big * 5 >= goal) // if total len of the benches is >= the goal
+            return true;
+        else
+            return false;
+    }
+
         
-
-
+    // Main Method
     public static void main(String[] args) {
         ConditionalExercise ce = new ConditionalExercise();
         // Exercise 1:
@@ -86,7 +93,20 @@ public class ConditionalExercise {
         System.out.println("Find Best fit 4 3 6 is " + ce.findBestFit(4,3,6));
         System.out.println("Find Best fit 4 3 3 is " + ce.findBestFit(4,3,3));
         System.out.println("Find Best fit 4 4 3 is " + ce.findBestFit(4,4,3));
-
+        System.out.println("\n");
+        // Exercise 4:
+        System.out.println("Make Benches: \n");   
+        System.out.println("Make benches 3 1 8 is " + ce.makeBenches(3,1,8));
+        System.out.println("Make benches 3 1 9 is " + ce.makeBenches(3,1,9));
+        System.out.println("Make benches 11 1 15 is " + ce.makeBenches(11,1,15));
+        System.out.println("Make benches 4 2 15 is " + ce.makeBenches(4,2,15));
+        System.out.println("Make benches 20 0 20 is " + ce.makeBenches(20,0,20));
+        System.out.println("Make benches 3 4 20 is " + ce.makeBenches(3,4,20));
+        System.out.println("Make benches 0 6 30 is " + ce.makeBenches(0,6,30));
+        System.out.println("Make benches 0 5 30 is " + ce.makeBenches(0,5,30));
+        System.out.println("Make benches 2 6 23 is " + ce.makeBenches(2,6,23));
+        System.out.println("Make benches 3 2 23 is " + ce.makeBenches(3,2,23));
+        System.out.println("\n");
 
     }
 }
