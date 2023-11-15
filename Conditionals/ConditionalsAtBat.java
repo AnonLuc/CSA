@@ -30,21 +30,30 @@ public class ConditionalsAtBat {
         return a % 10 == b % 10 || a % 10 == c % 10 || b % 10 == c % 10;
     }
     public int blackjack(int a, int b){
+        // Check if both a and b are less than or equal to 21
         if(a <= 21 && b <= 21){
+            // If a is less than b, return b. Otherwise, return a.
             if (a < b){
                 return b;
             }
             return a;
-        } else if(a > 21 && b > 21){
+        } 
+        // Check if both a and b are greater than 21
+        else if(a > 21 && b > 21){
+            // If both a and b are greater than 21, return 0
             return 0;
         }
+        // Check if a is greater than b
         else if(a - b > 0){
+            // If a is greater than b, return b
             return b;
         } 
+        // Check if b is greater than a
         else if(b - a > 0){
+            // If b is greater than a, return a
             return a;
         }
-
+        // If none of the above conditions are met, return 0
         return 0;
     }
 
