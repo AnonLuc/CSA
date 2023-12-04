@@ -6,12 +6,12 @@ public class WhileEx {
     int sum = 0; 
     int i = 1; 
 
-    while (i <= n) { // Loop until the counter is > than n
+    while (i <= n) { // Loop until the counter is > n
         sum += i; // Add the current value of i to the sum
         i += 2; // Increment i by 2 to get the next odd number
     }
 
-    return sum; // Return the sum
+    return sum;  
 }
     // Question 2
     
@@ -25,8 +25,14 @@ public class WhileEx {
     }
 
     // Question 3 
-    // how many years it will take to reach a particular population level.  Use a while loop.  Test your method using 120 million and 150 million and end populations.
-    public static int howManyYears(double startpop, double endpop){
+    
+    public static int howManyYears(double startpop, double endpop) {
+        int years = 0;
+        while (startpop < endpop) { // Loop until startpop is > endpop
+            startpop *= 1.0113; // Increase startpop by 1.13%
+            years++; // Add years by 1
+        }
+        return years;
         
     }
 
@@ -43,6 +49,12 @@ public class WhileEx {
         System.out.println(sumDigits(123));
         System.out.println(sumDigits(1234));
         System.out.println(sumDigits(12345));
+        System.out.println("\n");
+        // Question 3:
+        System.out.println("Question 3: \n");
+        System.out.println(howManyYears(120, 150));
+        System.out.println(howManyYears(120, 200));
+        System.out.println(howManyYears(120, 500));
         System.out.println("\n");
     }
 
