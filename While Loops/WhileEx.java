@@ -33,7 +33,31 @@ public class WhileEx {
             years++; // Add years by 1
         }
         return years;
-        
+    }
+
+    // Question 4
+    public static void printSum(int n) {
+        int sum = 0; 
+        int i = 1; 
+        while (i <= n) { // Loop until the counter is > n
+            sum += i; // Add the current value of i to the sum
+            System.out.print(i); // Print the numbers with a + sign
+            if (i < n) {
+                System.out.print(" + ");
+            }
+            i++; // Add by one
+        }
+        System.out.println(" = " + sum); // Print the final sum
+    }
+    // Question 5
+    public static boolean isPerfectSquare(int n) {
+        int sum = 0; 
+        int i = 1; 
+        while (sum < n) {
+            sum += i; // Add the current value of i to the sum
+            i += 2; // Increment i by 2 to get the next odd number
+        }
+        return sum == n; // Check if the sum is equal to n
     }
 
     // Main
@@ -55,6 +79,16 @@ public class WhileEx {
         System.out.println(howManyYears(120, 150));
         System.out.println(howManyYears(120, 200));
         System.out.println(howManyYears(120, 500));
+        System.out.println("\n");
+        // Question 4:
+        System.out.println("Question 4: \n");
+        printSum(6);
+        printSum(8);
+        System.out.println("\n");
+        // Question 5:
+        System.out.println("Question 5: \n");
+        System.out.println(isPerfectSquare(25));
+        System.out.println(isPerfectSquare(49));
         System.out.println("\n");
     }
 
