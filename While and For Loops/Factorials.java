@@ -25,15 +25,13 @@ public class Factorials {
         return currentE; 
     }
     // Question 3
-    public static double calcEX(){
+    public static double calcEX(int num){
         double currentE = 1; 
         double oldE = 0;
-        int i = 1;
 
-        while(currentE - oldE > 0.001){ // while the difference between the currentE and oldE is > 0.001
-            oldE = currentE; // oldE is now the currentE
-            currentE += (1.0 / calcFactorial(i)); // currentE is now the currentE + 1 / i!
-            i++;
+        for(int i = 1; currentE - oldE > 0.001; i++){
+            oldE = currentE;
+            currentE += (Math.pow(num, i) / calcFactorial(i));
         }
 
         return currentE;
@@ -53,6 +51,10 @@ public class Factorials {
         System.out.println("\n");
         // Question 3:
         System.out.println("Question 3: \n");
+        for(int i = 1; i<= 5; i++){ // print out the factorials of 1-20
+            System.out.printf("e is %2.3f \n", calcEX(i));
 
+        }
+       
     }
 }
