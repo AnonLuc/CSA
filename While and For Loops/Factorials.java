@@ -29,9 +29,9 @@ public class Factorials {
         double currentE = 1; 
         double oldE = 0;
 
-        for(int i = 1; currentE - oldE > 0.001; i++){
-            oldE = currentE;
-            currentE += (Math.pow(num, i) / calcFactorial(i));
+        for(int i = 1; currentE - oldE > 0.001; i++){ // for loop that runs while the difference between the currentE and oldE is > 0.001
+            oldE = currentE; // oldE is now the currentE
+            currentE += (Math.pow(num, i) / calcFactorial(i)); // currentE is now the currentE + num^i / i!
         }
 
         return currentE;
