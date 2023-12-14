@@ -12,17 +12,17 @@ public class Factorials {
 
     // Question 2
     public static double calcE(){
-        double currentE = 1;
-        double prevE = 0;
+        double currentE = 1; 
+        double oldE = 0;
         int i = 1;
 
-        while(currentE - prevE > 0.001){
-            prevE = currentE;
-            currentE += (1.0 / calcFactorial(i));
-            i++;
+        while(currentE - oldE > 0.001){ // while the difference between the currentE and oldE is greater than 0.001
+            oldE = currentE; // oldE is now the currentE
+            currentE += (1.0 / calcFactorial(i)); // currentE is now the currentE + 1 / i!
+            i++; // increment 1
         }
 
-        return currentE;
+        return currentE; 
     }
 
     
@@ -51,6 +51,8 @@ public class Factorials {
         System.out.println(calcFactorial(20));
         System.out.println("\n");
         // Question 2:
+        System.out.println("Question 2: \n");
+        System.out.println(calcE());
 
     }
 }
