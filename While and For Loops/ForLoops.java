@@ -25,6 +25,17 @@ public class ForLoops {
             System.out.println();
         }
     }
+    // Question 4
+    public static void sillyNumbers2(){
+        for (int i = 0; i < 4; i++) {
+            for (int j = 9; j >= 1; j--) {
+                for (int k = 0; k < j; k++) {
+                    System.out.print(j);
+                }
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         // Question 1:
         System.out.println("Question 1: \n");
@@ -41,6 +52,10 @@ public class ForLoops {
         // Question 3:
         System.out.println("Question 3: \n");
         sillyNumbers();
+        System.out.println("\n");
+        // Question 4:
+        System.out.println("Question 4: \n");
+        sillyNumbers2();
         System.out.println("\n");
     }
 
