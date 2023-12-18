@@ -39,6 +39,9 @@ public class ForLoops {
         printSquaresBack(30);
         System.out.println("\n");
         // Question 3:
+        System.out.println("Question 3: \n");
+        sillyNumbers();
+        System.out.println("\n");
     }
 
 }
