@@ -63,13 +63,15 @@ public class StringEx {
         return true; 
     }
     // Question 8
-    public static String removeTag(String s, String tag){
-        int tag1 = s.indexOf(tag); // finds first tag
-        int tag2 = s.indexOf(tag, tag1 + 1); // finds second tag
-        if (tag1 == -1 || tag2 == -1){ // if tag1 or tag2 is not found
+    public static String removeTag(String s, String tag) {
+        int tag1 = s.indexOf("<" + tag + ">"); // finds first opening tag
+        int tag2 = s.indexOf("</" + tag + ">", tag1 + 1); // finds first closing tag after the opening tag
+
+        if (tag1 == -1 || tag2 == -1 || tag2 < tag1) { // if either tag is not found or closing tag is before opening tag
             return s; // returns original string
         }
-        return s.substring(tag1 + tag.length(), tag2); // returns string between tags
+
+        return s.substring(tag1 + tag.length() + 2, tag2); // returns string between tags
     }
     // Main
     public static void main(String[] args){
