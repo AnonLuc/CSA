@@ -13,7 +13,6 @@ public class Sentence {
 	}
 	
 
-
 	/** Returns the index of the nth occurrence of str in the current sentence;
 	 * returns -1 of the nth occurrence does not exist.
 	 * Precondition:  str.length() > 0 and n > 0
@@ -47,7 +46,8 @@ public class Sentence {
 	 *
 	 */
 	public void replaceNthTime(String str, int n, String repl) {
-		/*  part b - you must call findNthTime here */
+		if(findNthTime(str, n) != -1)
+        currSent = currSent.substring(0, findNthTime(str, n)) + repl + currSent.substring(findNthTime(str, n)+str.length());
 	}
 
 	/** Returns the index of the last occurrence of str in the current sentence:
@@ -56,8 +56,8 @@ public class Sentence {
 	 * Postcondition: the current sentence is not modified.
 	 */
 	public int findLastTime(String str) {
-		/* part c - you must call findNthTime here */
-		return -1;  // replace this
+	
+	return index;
 	}
 
 	public static void main(String[] args) {
