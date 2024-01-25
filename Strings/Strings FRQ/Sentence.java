@@ -1,4 +1,3 @@
-
 public class Sentence {
 
 	private String currSent;
@@ -21,9 +20,26 @@ public class Sentence {
 	 * Postcondition: the current sentence if not modified.
 	 */
 	public int findNthTime(String str, int n) {
-		/* part a */
-		return -1;  //replace this
+		int count = 0;
+		int index = -1;
+		String sentence = currSent;
+		
+		for (int i = 0; i < sentence.length(); i++) {
+			if (sentence.charAt(i) == str.charAt(0)) {
+				count++;
+				if (count == n) {
+					index = i;
+				}
+			}
+			
+			if (index != -1) {
+				break;
+			}
+		}
+    
+    return index;
 	}
+	
 
 	/** Modifies the current sentence by replacing the nth occurrence of str with repl
 	 * If the nth occurrence does not exist, the current sentence is unchanged.
