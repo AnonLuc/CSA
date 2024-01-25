@@ -21,7 +21,7 @@ public class ErrorLog {
                 return isAtStart && isAtEnd;
             }
             return false;
-        }  
+        }
 
     public String getMachineId() { return machineId;}
     public String getDescription() { return description; }
