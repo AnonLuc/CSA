@@ -28,4 +28,18 @@ public class HardStrings {
         s1 += s1;
         return s1.contains(s2);
     }
+    // Question 4
+    public static String addCommas(String s) {
+        String result = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (i > 0 && (s.length() - i) % 3 == 0) {
+                result += ",";
+            }
+            result += s.charAt(i);
+        }
+        return result;
+    }
+    // Question 5
+    
+    
 }
