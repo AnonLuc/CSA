@@ -58,6 +58,7 @@ public class SoccerTeam {
         
     public static void main(String[] args) {
         // Tournament 1
+        System.out.println("Tournament 1: \n");
         SoccerTeam team1 = new SoccerTeam();
         SoccerTeam team2 = new SoccerTeam();
         team1.played(team2, 3, 2);
@@ -65,5 +66,39 @@ public class SoccerTeam {
         System.out.println("Team 2 points: " + team2.points());
         System.out.println("Games played: " + SoccerTeam.getGamesPlayed());
         System.out.println("Goals scored: " + SoccerTeam.getGoalsScored());
+        System.out.println("\n");
+        // Tournament 2
+        System.out.println("Tournament 2: \n");
+        team1.reset();
+        team2.reset();
+        team1.played(team2, 1, 1);
+        System.out.println("Team 1 points: " + team1.points());
+        System.out.println("Team 2 points: " + team2.points());
+        System.out.println("Games played: " + SoccerTeam.getGamesPlayed());
+        System.out.println("Goals scored: " + SoccerTeam.getGoalsScored());
+        System.out.println("\n");
+        // Tournament 3
+        System.out.println("Tournament 3: \n");
+        team1.reset();
+        team2.reset();
+        team1.played(team2, 0, 2);
+        System.out.println("Team 1 points: " + team1.points());
+        System.out.println("Team 2 points: " + team2.points());
+        System.out.println("Games played: " + SoccerTeam.getGamesPlayed());
+        System.out.println("Goals scored: " + SoccerTeam.getGoalsScored());
+        System.out.println("\n");
+        // Tournament 4
+        System.out.println("Tournament 4: \n");
+        team1.reset();
+        team2.reset();
+        team1.played(team2, 2, 2);
+        System.out.println("Team 1 points: " + team1.points());
+        System.out.println("Team 2 points: " + team2.points());
+        System.out.println("Games played: " + SoccerTeam.getGamesPlayed());
+        System.out.println("Goals scored: " + SoccerTeam.getGoalsScored());
+        System.out.println("\n");
+        
+
+
     }    
 }
