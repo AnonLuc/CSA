@@ -1,4 +1,3 @@
-
 public class NitalTester {
 
     /** Returns true if and only if every value in arr1 appears in arr2.
@@ -45,20 +44,20 @@ public class NitalTester {
 
                 result: {1, 4, 5}
      */
-
+  
+      
     /** Returns an array containing the elements of column c of
      * arr2D in the same order they appear in arr2D
      * Precondition: c is a valid column in arr2D  (columns start with 0)
      * Postcondition: arr2D is unchanged.
      */
     public static int [] getColumn(int[][] arr2D, int c){
-		/* to be written in part a */
-        
-		
-		
-		return new int[1];  //replace this
+        int[] result = new int[arr2D.length];
+        for(int i = 0; i < arr2D.length; i++){
+            result[i] = arr2D[i][c];
+        }
+        return result;
     }
-
     /* Write the method isNital below.  You must use getColumn,
     hasAllValues and containsRepeats appropriately to receive
     full credit.
@@ -70,11 +69,11 @@ public class NitalTester {
      */
     public static boolean isNital(int[][] square){
 		/* to be written in part b */
-		
-        
-		
-		
-        return false;   // replace this
+        for(int i = 0; i < square.length; i++){
+            if(!hasAllValues(square[0],square[i])) return false;
+            if(containsRepeats(getColumn(square,i))) return false;
+        }
+		return false;
     }
 
     public static void main(String[] args){
@@ -83,7 +82,7 @@ public class NitalTester {
         int[][] n3 = {{1,2,1},{2,1,1},{1,1,2}};
         int[][] n4 = {{1,2,3},{3,1,2},{7,8,9}};
         int[][] n5 = {{1,2},{1,2}};
-	int[][] n6 = {{1,1},{2,2}};
+	    int[][] n6 = {{1,1},{2,2}};
 
         int [] arr1 = {1,2,3};
         int [] arr2 = {3,1,2};
@@ -101,9 +100,7 @@ public class NitalTester {
         System.out.println(isNital(n3));
         System.out.println(isNital(n4));
         System.out.println(isNital(n5));
-	System.out.println(isNital(n6));
-		
-
+	    System.out.println(isNital(n6));
 
     }
 }
