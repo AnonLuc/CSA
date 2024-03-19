@@ -22,11 +22,9 @@ public class WordPuzzle {
      */
     public boolean toBeLabeled(int r, int c, boolean [][] blackBoxes){
         /* to be implemented in part a */
-		
-		
-		
-		
-		return false;    // replace this
+        if(blackBoxes[r][c]) return false; // if the box is black
+        if(r == 0 || c == 0 || blackBoxes[r-1][c] || blackBoxes[r][c-1]) return true; // if it's the first row or column or if the box to the left or above is black
+        return false; // in case it fails
     }
 
     /* Write the WordPuzzle Constructor.  The constructor should initialize the
@@ -48,7 +46,20 @@ public class WordPuzzle {
      */
     public WordPuzzle(boolean [][] blackBoxes){
         /* to be implemented in part b */
-        
+        puzzle = new Box[blackBoxes.length][blackBoxes[0].length]; 
+        int count = 1;
+        for(int r = 0; r < blackBoxes.length; r++){ // go through the rows
+            for(int c = 0; c < blackBoxes[0].length; c++){ // go through the columns
+                if(toBeLabeled(r,c,blackBoxes)){ // if the box is labeled
+                    puzzle[r][c] = new Box(blackBoxes[r][c],count); // make a new box with the number
+                    count++; // 
+                }
+                else{
+                    puzzle[r][c] = new Box(blackBoxes[r][c],0); // make a new box without the number
+                }
+            }
+        }
+
 		
 		
     }
