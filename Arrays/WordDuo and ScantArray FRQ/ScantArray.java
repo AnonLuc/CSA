@@ -72,6 +72,15 @@ public class ScantArray {
      */
     public void removeColumn(int col) {
         /* part b */
+        for (int i = 0; i < entries.size(); i++) {
+            if (entries.get(i).getColumn() == col) {
+                entries.remove(i);
+                i--;
+            } 
+            else if (entries.get(i).getColumn() > col) {
+                entries.set(i, new ScantArrayEntry(entries.get(i).getRow(), entries.get(i).getColumn() - 1, entries.get(i).getValue()));
+            }
+        }
 
     }
 
@@ -88,7 +97,12 @@ public class ScantArray {
     public String toString() {
         /* part c */
         String s = "";
-
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numColumns; j++) {
+                s += getValueAt(i, j) + " ";
+            }
+            s += "\n";
+        }
         return s;
     }
 
@@ -111,5 +125,21 @@ public class ScantArray {
         System.out.println(sa1);
 
         /******* please add one more test of your own *******/
+        ScantArray sa2 = new ScantArray(3, 3);
+        sa2.addEntry(0, 0, 1);
+        sa2.addEntry(1, 1, 2);
+        sa2.addEntry(2, 2, 3);
+
+        System.out.println(sa2.getValueAt(0, 0));
+        System.out.println(sa2.getValueAt(1, 1));
+        System.out.println(sa2.getValueAt(2, 2));
+        System.out.println("rows " + sa2.getNumRows());
+        System.out.println("columns " + sa2.getNumColumns());
+
+        System.out.println(sa2);
+        
+        sa2.removeColumn(1);
+        System.out.println(sa2);
+
     }
 }
