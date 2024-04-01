@@ -41,10 +41,13 @@ public class WordDuoList {
      */
     public WordDuoList(String[] words){
         /* part A */
-        
+        allDuos = new ArrayList<WordDuo>();
+        for (int i = 0; i < words.length; i++){
+            for (int j = i+1; j < words.length; j++){
+                allDuos.add(new WordDuo(words[i], words[j]));
+            }
+        }
 		
-		
-
     }
     public String toString(){
         String s = "";
@@ -72,10 +75,13 @@ public class WordDuoList {
      */
     public int numMatches(){
         /* part B  */
-        
-		
-		
-        return 0;  // replace this
+        int count = 0;
+        for (WordDuo wd: allDuos){
+            if (wd.getFirst().equals(wd.getSecond())){
+                count++;
+            }
+        }
+        return count;  // replace this
     }
 
     /*Write the method moveMatchesToTop()  THis method will look for
@@ -90,7 +96,15 @@ public class WordDuoList {
      */
     public void moveMatchesToTop(){
         /* part c */
-        
+        ArrayList<WordDuo> matches = new ArrayList<WordDuo>();
+        ArrayList<WordDuo> nonMatches = new ArrayList<WordDuo>();
+        for (WordDuo wd: allDuos){
+            if (wd.getFirst().equals(wd.getSecond())){
+                matches.add(wd);
+            } else {
+                nonMatches.add(wd);
+            }
+        }
 		
 		
     }
