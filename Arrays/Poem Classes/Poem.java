@@ -5,22 +5,15 @@ public class Poem {
         this.lines = lines;
     }
 
-    public int getLines() {
+    public int getNumlines() {
         return lines;
     }
 
-    public void setLines(int lines) {
-        this.lines = lines;
+    public void printRhythm() {
+        for (int i = 0; i < lines; i++) {
+            System.out.print("Free Verse! ");
+        }
+        System.out.println();
     }
 
-    public void display() {
-        System.out.println("Poem has " + lines + " lines.");
-    }
-
-    public static void main(String[] args) {
-        Poem poem = new Poem(10);
-        poem.display();
-    }
-
-    
 }
