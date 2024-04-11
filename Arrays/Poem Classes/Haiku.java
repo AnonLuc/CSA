@@ -1,8 +1,7 @@
-public class Haiku {
-    private int lines = 3;
-
-    public int getNumlines() {
-        return lines;
+public class Haiku extends Poem{
+    
+    public Haiku() {
+        super(3);
     }
 
     public int getSyllables(int line) {
@@ -13,9 +12,10 @@ public class Haiku {
             return 7;
         }
     }
-    // make printRhythm
+    
     public void printRhythm() {
-        System.out.println("Fee fi fo fum");
-    } 
-
+        System.out.println("Haiku! Haiku! Haiku!");
+        System.out.println("Haiku! Haiku!");
+        System.out.println("Haiku! Haiku! Haiku!");
+    }
 }
