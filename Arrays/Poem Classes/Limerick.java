@@ -1,21 +1,22 @@
-public class Haiku {
-    private int lines = 3;
+public class Limerick {
+    
+    private int lines = 5;
 
     public int getNumlines() {
         return lines;
     }
 
     public int getSyllables(int line) {
-        if (line == 1 || line == 3) {
-            return 5;
+        if (line == 1 || line == 2 || line == 5) {
+            return 8;
         } 
         else {
-            return 7;
+            return 5;
         }
     }
     // make printRhythm
     public void printRhythm() {
-        System.out.println("Fee fi fo fum");
-    } 
+        System.out.println("");
+    }
 
 }
